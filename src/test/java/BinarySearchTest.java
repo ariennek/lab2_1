@@ -73,4 +73,22 @@ public class BinarySearchTest {
         int key = 6;
         SearchResult searchResult = BinarySearch.search(key, sequence);
     }
+
+    @Test
+    public void elementIsBeforeTheMiddleOfMultiElementSequenceTest() {
+        int sequence[] = new int[]{2, 4, 5};
+        int key = 2;
+        SearchResult searchResult = BinarySearch.search(key, sequence);
+        Assert.assertThat(searchResult.isFound(), is(equalTo(true)));
+        Assert.assertThat(searchResult.getPosition() < sequence.length / 2.0, is(equalTo(true)));
+    }
+
+    @Test
+    public void elementIsAfterTheMiddleOfMultiElementSequenceTest() {
+        int sequence[] = new int[]{2, 4, 5};
+        int key = 5;
+        SearchResult searchResult = BinarySearch.search(key, sequence);
+        Assert.assertThat(searchResult.isFound(), is(equalTo(true)));
+        Assert.assertThat(searchResult.getPosition() > sequence.length / 2.0, is(equalTo(true)));
+    }
 }
