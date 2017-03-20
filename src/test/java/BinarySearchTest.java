@@ -52,4 +52,13 @@ public class BinarySearchTest {
         Assert.assertTrue(searchResult.isFound());
         Assert.assertTrue(searchResult.getPosition() == 2);
     }
+
+    @Test
+    public void elementIsNotInSequenceWithMoreThanOneElementTest() {
+        int sequence[] = new int[]{2, 4, 5};
+        int key = 6;
+        SearchResult searchResult = BinarySearch.search(key, sequence);
+        Assert.assertTrue(!searchResult.isFound());
+        Assert.assertTrue(searchResult.getPosition() == -1);
+    }
 }
