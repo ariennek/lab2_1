@@ -28,7 +28,7 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsFirstInSequenceTest() {
-        int sequence[] = new int[]{2,4,5};
+        int sequence[] = new int[]{2, 4, 5};
         int key = 2;
         SearchResult searchResult = BinarySearch.search(key, sequence);
         Assert.assertTrue(searchResult.isFound());
@@ -37,10 +37,19 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsLastInSequenceTest() {
-        int sequence[] = new int[]{2,4,5};
+        int sequence[] = new int[]{2, 4, 5};
         int key = 5;
         SearchResult searchResult = BinarySearch.search(key, sequence);
         Assert.assertTrue(searchResult.isFound());
         Assert.assertTrue(searchResult.getPosition() == sequence.length);
+    }
+
+    @Test
+    public void elementIsInTheMiddleOfSequenceTest() {
+        int sequence[] = new int[]{2, 4, 5};
+        int key = 4;
+        SearchResult searchResult = BinarySearch.search(key, sequence);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertTrue(searchResult.getPosition() == 2);
     }
 }
