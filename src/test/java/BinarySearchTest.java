@@ -12,7 +12,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class BinarySearchTest {
 
     @Test
-    public void elementIsInSequenceTest() {
+    public void elementIsInSingleElementSequenceTest() {
         int sequence[] = new int[]{2};
         int key = 2;
         SearchResult searchResult = BinarySearch.search(key, sequence);
@@ -23,7 +23,7 @@ public class BinarySearchTest {
 
 
     @Test
-    public void elementIsNotInSequenceTest() {
+    public void elementIsNotInSingleElementSequenceTest() {
         int sequence[] = new int[]{2};
         int key = 1;
         SearchResult searchResult = BinarySearch.search(key, sequence);
@@ -32,7 +32,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsFirstInSequenceTest() {
+    public void elementIsFirstInMultiElementSequenceTest() {
         int sequence[] = new int[]{2, 4, 5};
         int key = 2;
         SearchResult searchResult = BinarySearch.search(key, sequence);
@@ -41,7 +41,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsLastInSequenceTest() {
+    public void elementIsLastInMultiElementSequenceTest() {
         int sequence[] = new int[]{2, 4, 5};
         int key = 5;
         SearchResult searchResult = BinarySearch.search(key, sequence);
@@ -50,7 +50,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsInTheMiddleOfSequenceTest() {
+    public void elementIsInTheMiddleOfMultiElementSequenceTest() {
         int sequence[] = new int[]{2, 4, 5};
         int key = 4;
         SearchResult searchResult = BinarySearch.search(key, sequence);
@@ -59,7 +59,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsNotInSequenceWithMoreThanOneElementTest() {
+    public void elementIsNotInMultiElementSequenceTest() {
         int sequence[] = new int[]{2, 4, 5};
         int key = 6;
         SearchResult searchResult = BinarySearch.search(key, sequence);
